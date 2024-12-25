@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input,textarea,button,select,a{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:focus,a:visited,a:active{
+    outline: none;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: #eee;
+    font-family: cursive;
+
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* card */
+.card{
+    width: 40%;
+    height: 50%;
+    background-color: #F5C06C;
+    cursor: pointer;
+    position: relative;
+    perspective: 1400px;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)2s;
+}
+
+
+/* left card */
+.left-card{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1);
+    background-image: url('image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+
+  transition: transfrom 1s;
+  transform-style: preserve-3d;
+  transform-origin: 0 0;
+  transition: all cubic-bezier(0.19, 1, 0.22, 1)1.5s;
+}
+
+.left-card .card-front, .left-card .card-back{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+}
+
+.left-card .card-back{
+    background-color: #F5C06C;
+    transform: rotateY(180deg);transition: all cubic-bezier(0.19, 1, 0.22, 1)1.4s;
+}
+
+.card-back img{
+    width: 100%;
+    height: 100%;
+}
+/* oprn card */
+.card.open .left-card{
+    transform: rotateY(-180deg);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1)1.4s;
+}
+.card.open{
+    left: 20%;
+}
+/* right card */
+.right-card{
+    background-color: #F5C06C;
+    height: 100%;
+    width: 100%;
+    font-size: 85%;
+    text-align: center;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    color: #444;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 0;
+}
+.right-card h2{
+    color: crimson;
+}
+.right-card p:nth-child(3){
+    width: 100%;
+    text-align: right;
+}
